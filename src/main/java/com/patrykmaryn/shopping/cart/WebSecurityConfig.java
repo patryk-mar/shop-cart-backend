@@ -41,8 +41,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		  CorsConfiguration config = new CorsConfiguration();
-		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200", 
-				  "https://ng-maryn-shopping-cart.herokuapp.com"
+		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200"
 				  ));
 		  config.setAllowCredentials(true);
 		  config.setAllowedMethods(ImmutableList.of("HEAD",
