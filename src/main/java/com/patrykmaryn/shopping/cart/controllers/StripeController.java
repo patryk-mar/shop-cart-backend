@@ -47,7 +47,7 @@ public class StripeController {
 			throws StripeException { 
 		
 		Gson gson = new Gson();
-		Stripe.apiKey = "sk_test_4oFRHsdh1QH1xnWTEDowfl3w00GsYQ6y5Q";				
+		Stripe.apiKey = "sk_test_XXXXXXXXXXXXXXXXXX";				
 			resposne.setContentType("application/json");
 			
 			try {
@@ -88,7 +88,7 @@ public class StripeController {
 				PaymentIntent intent = PaymentIntent.create(createParams);
 				
 				// Send publishable key and PaymentIntent  details to client
-				return gson.toJson(new CreatePaymentResponse("pk_test_fJMqY2qUl2GKEsb4DPuvUrsE00Cu8SIepp",
+				return gson.toJson(new CreatePaymentResponse("pk_test_XXXXXXXXXXXXXXXXXXX",
 						intent.getClientSecret()));
 			} catch (JsonSyntaxException e) {
 				e.printStackTrace();
@@ -111,7 +111,7 @@ public class StripeController {
 	    }
 		String payload = buffer.toString();	
 		String sigHeader = request.getHeader("Stripe-Signature");
-		String endpointSecret = "whsec_K0VyECJZnMZCUcKxK57XxJkcIKmsUQac";
+		String endpointSecret = "whsec_XXXXXXXXXXXXXXXXXXXXXX";
 		Event event = null;		
 		try {
 			event = Webhook.constructEvent(payload, sigHeader, endpointSecret);
@@ -140,7 +140,7 @@ public class StripeController {
 	public void createCustomer(HttpServletResponse response, @RequestBody CartDto cartDto) 
 			throws Throwable {
 
-		Stripe.apiKey = "sk_test_4oFRHsdh1QH1xnWTEDowfl3w00GsYQ6y5Q";
+		Stripe.apiKey = "sk_test_XXXXXXXXXXXXXXXXXXXX";
 		
 		Optional<User> userOpt = userRepository.findById(cartDto.getUser());
 		Optional<Cart> cartOpt = cartRepository.findById(cartDto.getId());
