@@ -45,7 +45,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	public CorsConfigurationSource corsConfigurationSource() {
 		  CorsConfiguration config = new CorsConfiguration();
 		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200" 
-				  //"https://chat-maryn-demo.herokuapp.com"
+				  //"https://ng-maryn-shopping-cart.herokuapp.com"
 				  ));
 		  config.setAllowCredentials(true);
 		  config.setAllowedMethods(ImmutableList.of("HEAD",
@@ -57,22 +57,6 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	      return source;
 		}
 	
-	
-//	@Bean
-//	public CorsConfigurationSource corsConfigurationSource() {
-//		  CorsConfiguration config = new CorsConfiguration();
-//		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200" 
-//				  //"https://chat-maryn-demo.herokuapp.com"
-//				  ));
-//		  config.setAllowCredentials(true);
-//		  config.setAllowedMethods(ImmutableList.of("HEAD",
-//	                "GET", "POST", "PUT", "DELETE", "PATCH"));
-//		  config.setAllowedHeaders(ImmutableList.of("Authorization", 
-//				  "Cache-Control", "Content-Type"));
-//	      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//	      source.registerCorsConfiguration("/**", config);
-//	      return source;
-//		}	
 }
 
 
