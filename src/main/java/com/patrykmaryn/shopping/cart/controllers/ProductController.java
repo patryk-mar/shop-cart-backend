@@ -40,29 +40,4 @@ public class ProductController {
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
-	@GetMapping("/add-product")
-	public void displayRecipients2() {
-				
-		Product product1 = new Product();
-		product1.setName("T-shirt 1");
-		product1.setDescription("This is new t-shirt");
-		product1.setImageUrl("https://maryn-ecommerce-new.s3.eu-west-2.amazonaws.com/media/products/t-shirt1.jpeg");
-		product1.setPrice(22.22);
-		
-		Product product2 = new Product();
-		product2.setName("T-shirt 2");
-		product2.setDescription("This is new t-shirt");
-		product2.setImageUrl("https://maryn-ecommerce-new.s3.eu-west-2.amazonaws.com/media/products/t-shirt2.jpg");
-		product2.setPrice(32.22);
-		
-		Product product3 = new Product();
-		product3.setName("T-shirt 3");
-		product3.setDescription("This is new t-shirt");
-		product3.setImageUrl("https://maryn-ecommerce-new.s3.eu-west-2.amazonaws.com/media/products/t-shirt3.jpg");
-		product3.setPrice(35.22);
-		productRepository.save(product1);
-		productRepository.save(product2);
-		productRepository.save(product3);
-	}
-
 }
