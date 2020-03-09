@@ -28,8 +28,8 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
     		   "/create-customer",
     		   "/script.js**", "/script.js/**",
     		   "/script.js**", "https://js.stripe.com/**", "/webhook", "/webhook/**",
-    		   "https://ng-maryn-shopping-cart.herokuapp.com/**",
-    		   "http://localhost:4200/**",
+    		   //"https://ng-maryn-shopping-cart.herokuapp.com/**",
+    		   //"http://localhost:4200/**",
     		   "/api/**",
     		   "/webjars/**", "/error**", "/stripe**").permitAll()
 		  .and()
