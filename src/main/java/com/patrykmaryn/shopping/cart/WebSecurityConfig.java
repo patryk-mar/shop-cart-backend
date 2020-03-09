@@ -22,20 +22,19 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	      .cors()
           .and()
 	       .authorizeRequests().antMatchers("css/**", "js**", "/assets/**",
-	    		   "/**/*.css", "/**/*.js", "/resources/**",
-	    		   "/resources/**", "/static/**", "/css/**", "/js/**", "/resources/static/**",
-	    		   "/create-payment-intent", 
-	    		   "/create-customer",
-	    		   "/script.js**", "/script.js/**",
-	    		   "/script.js**", "https://js.stripe.com/**", "/webhook", "/webhook/**",
-	    		   "https://ng-maryn-shopping-cart.herokuapp.com/**",
-	    		   "http://localhost:4200/**",
-	    		   "/api/**",
-	    		   "/webjars/**", "/error**", "/stripe**").permitAll()
+    		   "/**/*.css", "/**/*.js", "/resources/**",
+    		   "/resources/**", "/static/**", "/css/**", "/js/**", "/resources/static/**",
+    		   "/create-payment-intent", 
+    		   "/create-customer",
+    		   "/script.js**", "/script.js/**",
+    		   "/script.js**", "https://js.stripe.com/**", "/webhook", "/webhook/**",
+    		   "https://ng-maryn-shopping-cart.herokuapp.com/**",
+    		   "http://localhost:4200/**",
+    		   "/api/**",
+    		   "/webjars/**", "/error**", "/stripe**").permitAll()
 		  .and()
 	  	   .authorizeRequests()
 	       .anyRequest().authenticated()
-
 	    .and()
 	    .csrf().disable();
 		
@@ -44,8 +43,8 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		  CorsConfiguration config = new CorsConfiguration();
-		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200" 
-				  //"https://ng-maryn-shopping-cart.herokuapp.com"
+		  config.setAllowedOrigins(ImmutableList.of("http://localhost:4200", 
+				  "https://ng-maryn-shopping-cart.herokuapp.com"
 				  ));
 		  config.setAllowCredentials(true);
 		  config.setAllowedMethods(ImmutableList.of("HEAD",
@@ -55,10 +54,5 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
 	      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 	      source.registerCorsConfiguration("/**", config);
 	      return source;
-		}
-	
+		}	
 }
-
-
-
-
